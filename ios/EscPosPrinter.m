@@ -408,8 +408,8 @@ RCT_EXPORT_METHOD(printBuffer: (NSArray *)printBuffer
     NSMutableString *address = [[NSMutableString alloc] init];
     int result = [pairingPrinter connectDevice: address];
 
-    if(result == EPOS2_BT_SUCCESS || result == EPOS2_BT_ERR_ALREADY_CONNECT) {
-        NSString *successString = [ErrorManager getEposBTResultText: EPOS2_BT_SUCCESS];
+    if(result == BT_SUCCESS || result == EPOS2_BT_SUCCESS || result == EPOS2_BT_ERR_ALREADY_CONNECT) {
+        NSString *successString = [ErrorManager getEposBTResultText: EPOS2_BT_SUCCESS || BT_SUCCESS];
         onSuccess(successString);
     } else {
         NSString *errorString = [ErrorManager getEposBTResultText: EPOS2_BT_SUCCESS];
